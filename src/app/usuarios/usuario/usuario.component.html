@@ -1,1 +1,19 @@
-<p>usuario works!</p>
+<div class="alert alert-info text-center" role="alert" *ngIf="loading">
+  <h4 class="alert-heading">Cargando...</h4>
+  <p>
+    <i class="fa fa-sync fa-spin fa-2x"></i>
+  </p>
+  <p class="nb-0"></p>
+</div>
+<div class="row" *ngIf="!loading">
+  <div class="col-4">
+    <img [src]="usuario.avatar" alt="avatar" class="img-thumbnail" />
+  </div>
+  <div class="col">
+    <button type="button" class="btn btn-dark" [routerLink]="['/home']"><i class="fa fa-home"></i> Go back</button>
+    <ul class="list-group pt-1">
+      <li class="list-group-item"> <b>Nombre:</b> {{ usuario.first_name }} </li>
+      <li class="list-group-item"> <b>Apellido:</b> {{ usuario.last_name }} </li>
+    </ul>
+  </div>
+</div>
